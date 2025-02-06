@@ -7,7 +7,7 @@ import axios from 'axios';
 const CSS_CDN_URL = 'https://cdn.stylexui.com/css/xui.css';
 
 // Path to cache the downloaded CSS file
-const LOCAL_CSS_PATH = path.join(__dirname, 'cached_styles.css');
+const LOCAL_CSS_PATH = path.join(__dirname, 'src/assets/css/snippets.css');
 
 /**
  * Fetches the CSS file from the CDN and saves it locally.
@@ -47,6 +47,7 @@ export async function activate(context: vscode.ExtensionContext) {
   const cssContent = await fetchAndCacheCSS();
   const cssSnippets = parseCSS(cssContent);
   const suggestions = Object.keys(cssSnippets);
+
 
   const supportedLanguages = ['html', 'css', 'javascript', 'javascriptreact', 'typescriptreact'];
 
