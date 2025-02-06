@@ -26,7 +26,7 @@ Dive in and discover how StyleXui can help bring your projects to life!
 
 
 
-![image of embedded class.](src/assets/images/first_screen.png "Insert the xui- to see all the classes.")
+![image of embedded class.](src/assets/images/first_screen.png "Insert xui- to see all the classes.")
 
 
 <!-- > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow. -->
@@ -38,7 +38,7 @@ Installation methods
 The easiest way to include StyleXui in your project is by using the CDN link. Simply add the following <link> tag to your HTML file:
 
 `<link rel="stylesheet"
-href="[https://cdn.stylexui.com/latest/stylexui.min.css](https://cdn.stylexui.com/css/xui.css)" />`
+href="https://cdn.stylexui.com/css/xui.css />`
 
 This method is ideal for:
 ●	Rapid prototyping
@@ -98,11 +98,9 @@ Copy and paste the following HTML template to get started:
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 0.0.1
 
-Initial release of Stylexui...
+Initial release of Stylexui Extension...
 
 
 ## License
