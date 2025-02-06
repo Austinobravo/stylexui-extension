@@ -13,7 +13,7 @@
     "Other"
   ],
   "license": "SEE LICENSE IN LICENSE.txt",
-  "icon": "src\assets/images/stylexui-logo.png",
+  "icon": "/src/assets/images/stylexui-logo.png",
   "contributes": {
     "languages": [
       {
