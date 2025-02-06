@@ -29,7 +29,7 @@ Dive in and discover how StyleXui can help bring your projects to life!
 ![image of embedded class.](src/assets/images/first_screen.png "Insert the xui- to see all the classes.")
 
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+<!-- > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow. -->
 
 ## Requirements
 
@@ -38,7 +38,7 @@ Installation methods
 The easiest way to include StyleXui in your project is by using the CDN link. Simply add the following <link> tag to your HTML file:
 
 `<link rel="stylesheet"
-href="https://cdn.stylexui.com/latest/stylexui.min.css" />`
+href="[https://cdn.stylexui.com/latest/stylexui.min.css](https://cdn.stylexui.com/css/xui.css)" />`
 
 This method is ideal for:
 ●	Rapid prototyping
@@ -63,9 +63,9 @@ This approach is suitable for:
 
 3.	Manual download (ZIP files)
 For offline use or when package managers are not an option, you can download the framework manually. 
-a.	Download the latest version from the official website. 
+a.	Download the latest version from the official [git](https://github.com/richaadgigi/stylexui.git). 
 b.	Extract the files and link the CSS in your HTML file:
-`<link rel="stylesheet" href="path/to/stylexui.css" />`
+`<link rel="stylesheet" href="path/to/xui.css" />`
 
 Manual installation works best for:
 ●	Static HTML/CSS projects
@@ -83,7 +83,7 @@ Copy and paste the following HTML template to get started:
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,  initial-scale=1.0">
         <title>My StyleXui Project</title>
-        <link rel="stylesheet" href="path/to/stylexui.css"> 
+        <link rel="stylesheet" href="path/to/xui.css"> 
     </head>
 
     <body>
@@ -138,5 +138,6 @@ For full licensing details, refer to the MIT License documentation.
 
 * [Stylexui Support](https://stylexui.com)
 
+>Don't forget to star the [repository](https://github.com/richaadgigi/stylexui.git) and follow the organization.
 
 **Enjoy!**
