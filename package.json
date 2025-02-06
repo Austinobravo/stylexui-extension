@@ -3,7 +3,7 @@
   "displayName": "StyleXui",
   "description": "A lightweight and modern CSS framework crafted to streamline your development process. Designed with efficiency and customizability in mind, StyleXui empowers developers to create beautiful, responsive, and accessible user interfaces effortlessly.",
   "keywords": ["xui", "css", "css framework", "intellisense"],
-  "publisher": "",
+  "publisher": "AustinefromXnyder",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.96.0"
@@ -12,7 +12,8 @@
     "Programming Languages",
     "Other"
   ],
-  "icon": "src/assets/images/stylexui-logo.svg",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "icon": "src\assets/images/stylexui-logo.png",
   "contributes": {
     "languages": [
       {

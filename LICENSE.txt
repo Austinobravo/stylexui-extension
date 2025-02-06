@@ -1,0 +1,22 @@
+XUI is an open-source front-end framework designed to provide lightweight and customizable UI components. It is distributed under the MIT License, ensuring flexibility for both personal and commercial use.
+
+License Type: MIT License
+
+XUI v1.1.0 is licensed under the MIT License (Massachusetts Institute of Technology License).
+
+Key Terms of the MIT License
+●	Permitted Uses
+○	Personal, commercial, and enterprise applications
+○	Modification, distribution, and sublicensing
+○	Integration into open-source and proprietary projects
+●	Restrictions
+○	No warranty or liability for any damages
+○	Cannot hold the original authors liable for any issues
+○	Must retain copyright notices in any distribution
+
+Third-Party Dependencies
+XUI utilizes `normalize.css v3.0.1`, a CSS reset stylesheet that ensures consistent styling across different browsers. Normalize.css is also licensed under the MIT License and can be freely used in any project.
+Compliance and Usage
+
+By using XUI, you agree to the terms set by the MIT License. Users are encouraged to contribute to the project while respecting the license terms.
+For full licensing details, refer to the MIT License documentation.
