@@ -26,7 +26,7 @@ Dive in and discover how StyleXui can help bring your projects to life!
 
 
 
-![image of embedded class.](https://res.cloudinary.com/de8gwnof9/image/upload/v1738843636/kbn2jf5kucsfpi4w8c6o.png "Insert xui- to see all the classes.")
+![image of embedded class.](first_screen.png "Insert xui- to see all the classes.")
 
 
 <!-- > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow. -->

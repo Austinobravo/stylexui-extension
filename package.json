@@ -13,7 +13,7 @@
     "Other"
   ],
   "license": "SEE LICENSE IN LICENSE.txt",
-  "icon": "https://res.cloudinary.com/de8gwnof9/image/upload/v1738843635/vrncnazgovjxav8ki4ta.png",
+  "icon": "stylexui-logo.png",
   "contributes": {
     "languages": [
       {
