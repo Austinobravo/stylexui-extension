@@ -1,69 +1,66 @@
 import * as vscode from 'vscode';
 import * as fs from 'fs';
 import * as path from 'path';
-import axios from 'axios';
 
-// URL of the CSS file hosted on CDN
-const CSS_CDN_URL = 'https://cdn.stylexui.com/css/xui.css';
+// Function to parse the CSS file and extract snippets
+function parseCSSFile(cssFilePath: string): { [key: string]: string } {
+  const cssContent = fs.readFileSync(cssFilePath, 'utf8');
+  const snippetMap: { [key: string]: string } = {};
 
-// Path to cache the downloaded CSS file
-const LOCAL_CSS_PATH = path.join(__dirname, 'src/assets/css/snippets.css');
-
-/**
- * Fetches the CSS file from the CDN and saves it locally.
- */
-async function fetchAndCacheCSS(): Promise<string> {
-  try {
-    const response = await axios.get(CSS_CDN_URL);
-    fs.writeFileSync(LOCAL_CSS_PATH, response.data, 'utf8');
-    return response.data;
-  } catch (error) {
-    console.error('Failed to fetch CSS file from CDN:', error);
-    return fs.existsSync(LOCAL_CSS_PATH) ? fs.readFileSync(LOCAL_CSS_PATH, 'utf8') : '';
-  }
-}
-
-/**
- * Parses a CSS string and extracts class names with their styles.
- */
-function parseCSS(cssContent: string): { [key: string]: string } {
+  // Regex to extract class names and their rules
   const classRegex = /\.([a-zA-Z0-9\-:]+)\s*\{([\s\S]*?)\}/g;
-  const snippets: { [key: string]: string } = {};
   let match;
 
   while ((match = classRegex.exec(cssContent)) !== null) {
     const className = match[1];
     const rules = match[2].trim();
-    snippets[className] = `.${className} {\n  ${rules.replace(/\n/g, '\n  ')}\n}`;
+    snippetMap[className] = `.${className} {\n  ${rules.replace(/\n/g, '\n  ')}\n}`;
   }
 
-  return snippets;
+  return snippetMap;
 }
 
-/**
- * Activates the VS Code extension.
- */
-export async function activate(context: vscode.ExtensionContext) {
-  const cssContent = await fetchAndCacheCSS();
-  const cssSnippets = parseCSS(cssContent);
+export function activate(context: vscode.ExtensionContext) {
+  // Path to the CSS file
+  const cssFilePath = path.join(context.extensionPath, 'src/assets/css/snippets.css');
+  const cssSnippets = parseCSSFile(cssFilePath);
   const suggestions = Object.keys(cssSnippets);
 
-
+  // Supported languages for autocomplete and hover
   const supportedLanguages = ['html', 'css', 'javascript', 'javascriptreact', 'typescriptreact'];
 
-  // Autocomplete provider
+  // Register a CompletionItemProvider for autocomplete
   supportedLanguages.forEach(language => {
     const provider = vscode.languages.registerCompletionItemProvider(
       { scheme: 'file', language },
       {
-        provideCompletionItems() {
-          return suggestions.map(item => {
+        provideCompletionItems(document, position) {
+          const completionItems = suggestions.map(item => {
             const completion = new vscode.CompletionItem(item, vscode.CompletionItemKind.Text);
-            completion.insertText = item;
-            completion.documentation = cssSnippets[item] ? new vscode.MarkdownString(`\`\`\`css\n${cssSnippets[item]}\n\`\`\``) : undefined;
-            completion.detail = `CSS Class: ${item}`;
+
+            // Autocomplete suggestion
+              const range = document.getWordRangeAtPosition(
+                vscode.window.activeTextEditor!.selection.active,
+                /[\w-]+/
+              );
+              completion.range = range ?? undefined; // Only replace what the user has typed
+              completion.insertText = item;
+            
+
+            // Hover documentation for dropdown
+            if (cssSnippets[item]) {
+              completion.documentation = new vscode.MarkdownString(
+                `\`\`\`css\n${cssSnippets[item]}\n\`\`\`\n`
+              );
+            } else {
+              completion.documentation = new vscode.MarkdownString(`No additional details available for ${item}.`);
+            }
+
+            completion.detail = `${item}`;
             return completion;
           });
+
+          return completionItems;
         }
       },
       '-', '.', 'xui-' // Trigger characters
@@ -72,23 +69,30 @@ export async function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(provider);
   });
 
-  // Hover provider
+  // Register a HoverProvider for hover functionality
   supportedLanguages.forEach(language => {
     const hoverProvider = vscode.languages.registerHoverProvider(
       { scheme: 'file', language },
       {
         provideHover(document, position) {
           const range = document.getWordRangeAtPosition(position, /[a-zA-Z0-9\-:]+/);
-          if (!range){
+          if (!range) {
             return null;
-          } 
-
-          const word = document.getText(range);
-          if (cssSnippets[word]) {
-            return new vscode.Hover(new vscode.MarkdownString(`\`\`\`css\n${cssSnippets[word]}\n\`\`\``));
           }
 
-          return null;
+          // Extract the word being hovered over
+          const word = document.getText(range);
+
+          // Check if the word matches a suggestion
+          if (cssSnippets[word]) {
+            return new vscode.Hover(
+              new vscode.MarkdownString(
+                `\`\`\`css\n${cssSnippets[word]}\n\`\`\`\n`
+              )
+            );
+          }
+
+          return null; // No hover content for unmatched words
         }
       }
     );
@@ -97,7 +101,4 @@ export async function activate(context: vscode.ExtensionContext) {
   });
 }
 
-/**
- * Deactivates the extension.
- */
 export function deactivate() {}

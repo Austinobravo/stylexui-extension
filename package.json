@@ -2,7 +2,7 @@
   "name": "stylexui",
   "displayName": "StyleXui",
   "description": "A lightweight and modern CSS framework crafted to streamline your development process. Designed with efficiency and customizability in mind, StyleXui empowers developers to create beautiful, responsive, and accessible user interfaces effortlessly.",
-  "keywords": ["xui", "css", "css framework", "intellisense"],
+  "keywords": ["xui", "css", "css framework", "intellisense", "stylexui"],
   "publisher": "AustinefromXnyder",
   "version": "0.0.1",
   "engines": {
@@ -50,13 +50,7 @@
     ],
     "configuration": {
       "title": "Autocomplete Extension",
-      "properties": {
-        "autocomplete.dataFilePath": {
-          "type": "string",
-          "default": "./suggestions.json",
-          "description": "Path to the file containing suggestions"
-        }
-      }
+      "properties": {}
     }
   },
   "activationEvents": [

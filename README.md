@@ -2,6 +2,8 @@
 
 This is the README for the extension "stylexui". 
 
+A lightweight and modern CSS framework crafted to streamline your development process. Designed with efficiency and customizability in mind, StyleXui empowers developers to create beautiful, responsive, and accessible user interfaces effortlessly.
+
 ## Overview of StyleXui
 
 Stylexui can also be called Style You.
@@ -55,7 +57,9 @@ b.	Install via Yarn
 `yarn add @richaadgigi/stylexui`
 
 After installation, import StyleXui into your project:
-import '@richaadgigi/stylexui';
+
+`import '@richaadgigi/stylexui'`;
+
 This approach is suitable for:
 ●	Component-based frameworks
 ●	Scalable projects with build tools
