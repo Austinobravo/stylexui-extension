@@ -16,6 +16,8 @@ Created by Richard Gigi, co-founder of Xnyder, StyleXui was born out of a need t
 
 Dive in and discover how StyleXui can help bring your projects to life!
 
+This extension was created by Austine Ebogu as an intellisense to seamlessly stylexui development.
+
 ## Features
 
 ●	Responsive Design: Built with mobile-first principles, StyleXui ensures your projects look great on all devices.
@@ -28,7 +30,7 @@ Dive in and discover how StyleXui can help bring your projects to life!
 
 
 
-![image of embedded class.](src/assets/images/first_screen.png "Insert xui- to see all the classes.")
+![image of embedded class.](https://res.cloudinary.com/de8gwnof9/image/upload/v1738843636/kbn2jf5kucsfpi4w8c6o.png "Insert xui- to see all the classes.")
 
 
 <!-- > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow. -->
