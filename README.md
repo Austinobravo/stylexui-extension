@@ -16,21 +16,31 @@ Created by Richard Gigi, co-founder of Xnyder, StyleXui was born out of a need t
 
 Dive in and discover how StyleXui can help bring your projects to life!
 
-This extension was created by Austine Ebogu as an intellisense to seamlessly stylexui development.
+This extension was created by [Austine Ebogu  ](https://eboguaustine.web.app) as an intellisense to seamlessly stylexui development.
 
 ## Features
 
-●	Responsive Design: Built with mobile-first principles, StyleXui ensures your projects look great on all devices.
+✔ Fully Responsive – Built with a mobile-first approach, ensuring flawless adaptability across all screen sizes. Whether on a phone, tablet, or desktop, your design remains pixel-perfect and seamless.
 
-●	Pre-Built Components: Ready-to-use components like buttons, modals, and navigation bars save you time and effort.
+✔ Pre-Built Components – Speed up development with a library of ready-to-use elements like buttons, modals, and navigation bars. No need to build from scratch—just plug, customize, and launch.
 
-●	Utility-First Approach: A wide range of utility classes makes it easy to style elements without writing custom CSS.
-●	Accessibility: StyleXui is designed with accessibility in mind, ensuring your projects are usable by everyone.
+✔ Effortless Customization – A utility-first framework that lets you style elements with ease, keeping your code clean and efficient. Define your own colors, spacing, and units—your design, your way.
+
+✔ Accessibility-First – Designed with inclusivity in mind, ensuring smooth navigation and interaction for all users, regardless of ability.
+
+✔ Seamless Light & Dark Mode – Instantly switch between bright and dark themes for a comfortable viewing experience, day or night.
+
+✔ Comprehensive Documentation – A well-structured, beginner-friendly guide to help you get started effortlessly and make the most out of StyleXui.
+
+✔ JavaScript Enhancements – Optional JavaScript for interactive components with smooth animations and behaviors.
 
 
 
 
-![image of embedded class.](https://res.cloudinary.com/de8gwnof9/image/upload/v1738843636/kbn2jf5kucsfpi4w8c6o.png "Insert xui- to see all the classes.")
+
+
+![image of embedded class.](https://res.cloudinary.com/de8gwnof9/image/upload/v1743244716/q7rzq8zptarhesy5tldi.png "Insert xui- to see all the classes.")
+
 
 
 <!-- > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow. -->
@@ -41,8 +51,12 @@ Installation methods
 1.	Via CDN
 The easiest way to include StyleXui in your project is by using the CDN link. Simply add the following <link> tag to your HTML file:
 
-`<link rel="stylesheet"
-href="https://cdn.stylexui.com/css/xui.css />`
+
+`<link rel="stylesheet" href="https://cdn.stylexui.com/@v1.0.0-stable/css/xui.css" />`
+
+Optional JavaScript (for interactive components) 
+
+`<script src="https://cdn.stylexui.com/@v1.0.0-stable/js/xui.js" defer></script>`
 
 This method is ideal for:
 ●	Rapid prototyping
@@ -53,14 +67,20 @@ This method is ideal for:
 For developers working with frameworks like React, Vue, or Angular, installing StyleXui via NPM or Yarn provides better version control and flexibility.
 
 a.	Install via NPM
+
 `npm install @richaadgigi/stylexui`
 
 b.	Install via Yarn
+
 `yarn add @richaadgigi/stylexui`
 
 After installation, import StyleXui into your project:
 
-`import '@richaadgigi/stylexui'`;
+  `import '@richaadgigi/stylexui/css/xui.min.css'`
+
+  `import { apply } from '@richaadgigi/stylexui'`
+
+  `apply()`
 
 This approach is suitable for:
 ●	Component-based frameworks
@@ -71,7 +91,12 @@ This approach is suitable for:
 For offline use or when package managers are not an option, you can download the framework manually. 
 a.	Download the latest version from the official [git](https://github.com/richaadgigi/stylexui.git). 
 b.	Extract the files and link the CSS in your HTML file:
+
 `<link rel="stylesheet" href="path/to/xui.css" />`
+
+Optional JavaScript (for interactive components)
+
+`<script src="path/to/xui.js" defer></script>`
 
 Manual installation works best for:
 ●	Static HTML/CSS projects
@@ -98,8 +123,14 @@ Copy and paste the following HTML template to get started:
             <p>Build modern, responsive, and accessible UIs with ease.</p>
             <button class="xui-btn xui-btn-primary">Get Started</button>
         </div>
+
+        
+        <!-- Optional StyleXui JS (for interactive components) -->
+        <script src="path/to/xui.js"></script>
     </body>
     </html>
+
+Visit our documentation to [learn more.](https://doc.clickup.com/9012486388/p/h/8cjz87m-2112/8989912e92c935b/8cjz87m-2112).
 
 
 ## Release Notes
@@ -140,7 +171,9 @@ For full licensing details, refer to the MIT License documentation.
 
 ## For more information
 
-* [Stylexui Support](https://stylexui.com)
+* [Stylexui  Official Website: ](https://stylexui.com)
+* [Stylexui Support & Issues: GitHub Issues](https://github.com/richaadgigi/stylexui/issues)
+ 
 
 >Don't forget to star the [repository](https://github.com/richaadgigi/stylexui.git) and follow the organization.
 
